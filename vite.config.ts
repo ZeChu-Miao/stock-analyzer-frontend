@@ -20,13 +20,6 @@ export default defineConfig(({ mode }) => {
       sourcemap: true,
       // 调整警告阈值为 800kB
       chunkSizeWarningLimit: 800,
-      
-      rollupOptions: {
-        output: {
-          // 手动拆分代码块
-          manualChunks: false
-        }
-      }
     }
   }
 })

@@ -51,7 +51,7 @@ jobs:
           docker run -d \
             --name stock-frontend \
             --restart always \
-            -p 80:80 \
+            -p 4002:4002 \
             --add-host=host.docker.internal:host-gateway \
             ${{ secrets.DOCKERHUB_USERNAME }}/stock-analyzer-frontend:latest
           

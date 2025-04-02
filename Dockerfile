@@ -25,7 +25,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
 # 暴露 80 端口
-EXPOSE 80
+EXPOSE 4002
 
 # 启动 nginx
 CMD ["nginx", "-g", "daemon off;"]

@@ -1,6 +1,9 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
 
+// 根据环境获取API基础URL
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8888';
+
 interface StockData {
   代码: string;
   名称: string;
@@ -44,7 +47,8 @@ export const useStocksStore = defineStore('stocks', {
         const queryParams = { ...this.filterParams, ...params };
         this.filterParams = queryParams;
         
-        const response = await axios.get('http://localhost:8888/api/stocks/filter', { 
+        // 使用环境变量中的API基础URL
+        const response = await axios.get(`${apiBaseUrl}/api/stocks/filter`, { 
           params: queryParams 
         });
         

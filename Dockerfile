@@ -24,8 +24,8 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # 从构建阶段复制构建结果到 nginx 目录
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
-# 暴露 80 端口
-EXPOSE 4002
+# 暴露 Nginx 默认端口
+EXPOSE 80
 
 # 启动 nginx
 CMD ["nginx", "-g", "daemon off;"]

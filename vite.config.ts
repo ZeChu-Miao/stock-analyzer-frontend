@@ -17,6 +17,7 @@ export default defineConfig(({ mode }) => {
       }
     },
     build: {
+      sourcemap: true,
       // 调整警告阈值为 800kB
       chunkSizeWarningLimit: 800,
       

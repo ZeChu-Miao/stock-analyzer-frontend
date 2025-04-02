@@ -24,14 +24,7 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         output: {
           // 手动拆分代码块
-          manualChunks: {
-            // 将 Element Plus 拆分为单独的块
-            'element-plus': ['element-plus'],
-            // 将所有 node_modules 中的依赖拆分为单独的块
-            vendor: ['vue', 'vue-router', 'pinia', 'axios'],
-            // 将图表库单独拆分
-            'chart-vendor': ['echarts']
-          }
+          manualChunks: false
         }
       }
     }

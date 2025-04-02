@@ -52,7 +52,6 @@ jobs:
             --name stock-frontend \
             --restart always \
             -p 4002:4002 \
-            --add-host=host.docker.internal:host-gateway \
             ${{ secrets.DOCKERHUB_USERNAME }}/stock-analyzer-frontend:latest
           
           # 清理未使用的镜像
